@@ -5,18 +5,14 @@ import { ArrowRight } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image */}
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
           alt="OBI Space - Modern lakeside event venue in Bengaluru" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-foreground/10 to-background/90" />
       </div>
-
-      {/* Glow Effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_hsl(var(--primary)/0.2),_transparent_70%)]" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
@@ -49,8 +45,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Bottom Fade for smooth transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };
