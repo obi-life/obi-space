@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-sunset.jpg";
+import heroImage from "@/assets/obi-hero.png";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
-          alt="OBI outdoor venue at sunset" 
+          alt="OBI Space - Modern lakeside event venue in Bengaluru" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/30 to-background/95" />
