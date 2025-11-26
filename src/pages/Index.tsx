@@ -6,6 +6,7 @@ import Offerings from "@/components/Offerings";
 import EventSpaces from "@/components/EventSpaces";
 import Packages from "@/components/Packages";
 import Afterschool from "@/components/Afterschool";
+import ArtMovementPrograms from "@/components/ArtMovementPrograms";
 import VirtualTour from "@/components/VirtualTour";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
@@ -28,6 +29,7 @@ const Index = () => {
       <section id="spaces">
         <EventSpaces />
       </section>
+      <ArtMovementPrograms />
       <Packages />
       <Afterschool />
       <VirtualTour />

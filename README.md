@@ -1,73 +1,120 @@
-# Welcome to your Lovable project
+# OBI Nature Escapes
 
-## Project info
+A modern marketing website for OBI Space - a lakeside event venue in Bengaluru, India. This website showcases event spaces, packages, afterschool programs, and provides an enquiry form for potential customers.
 
-**URL**: https://lovable.dev/projects/137bd109-6247-4ed6-b553-59abecec352b
+## Project Overview
 
-## How can I edit this code?
+OBI Space is a 2-acre lakeside event space designed for families, teams, and communities. The website features:
 
-There are several ways of editing your application.
+- Event space showcases
+- Package information
+- Afterschool programs
+- Image gallery
+- Customer testimonials
+- Contact/enquiry form
+- Virtual tour section
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/137bd109-6247-4ed6-b553-59abecec352b) and start prompting.
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: shadcn/ui (Radix UI primitives)
+- **Backend/Database**: Supabase (PostgreSQL)
+- **State Management**: TanStack Query (React Query)
+- **Routing**: React Router v6
+- **Forms**: React Hook Form with Zod validation
+- **Icons**: Lucide React
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js (v18 or higher recommended)
+- npm or yarn package manager
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+1. Clone the repository:
+```bash
 git clone <YOUR_GIT_URL>
+cd obi-nature-escapes
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. Set up environment variables:
+Create a `.env` file in the root directory with:
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_key
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+obi-nature-escapes/
+├── src/
+│   ├── components/          # React components
+│   │   ├── ui/             # shadcn/ui components
+│   │   └── ...              # Feature components
+│   ├── pages/              # Page components
+│   ├── hooks/              # Custom React hooks
+│   ├── integrations/       # External service integrations
+│   │   └── supabase/       # Supabase client & types
+│   └── assets/             # Images and static assets
+├── supabase/
+│   └── migrations/         # Database migrations
+└── public/                 # Public static files
+```
 
-This project is built with:
+## Database Schema
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The project uses Supabase with the following main tables:
 
-## How can I deploy this project?
+- `event_spaces` - Event space information
+- `packages` - Package details
+- `afterschool_programs` - Afterschool program information
+- `gallery_images` - Gallery image metadata
+- `testimonials` - Customer testimonials
+- `enquiries` - Contact form submissions
 
-Simply open [Lovable](https://lovable.dev/projects/137bd109-6247-4ed6-b553-59abecec352b) and click on Share -> Publish.
+## Features
 
-## Can I connect a custom domain to my Lovable project?
+- **Responsive Design**: Mobile-first approach with breakpoints for all devices
+- **Scroll Animations**: Smooth scroll-triggered animations throughout
+- **Form Handling**: Enquiry form with Supabase integration
+- **Modern UI**: Custom design system with gradient effects and animations
+- **SEO Optimized**: Semantic HTML and meta tags
 
-Yes, you can!
+## Deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Build the project for production:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```bash
+npm run build
+```
+
+The `dist` folder will contain the production-ready files that can be deployed to any static hosting service (Vercel, Netlify, AWS S3, etc.).
+
+## License
+
+Private project - All rights reserved.
