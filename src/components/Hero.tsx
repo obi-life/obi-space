@@ -1,15 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
-import slide1 from "@/assets/obi-hero.png";
-import slide2 from "@/assets/obi-hero-2.png";
+
 
 const slides = [
 	{
-		image: slide2,
+		image: "https://d9lbluszet4xk.cloudfront.net/website/carnival/gallery/winter-poster.webp",
 		title: (
 			<>
 				<span className="block text-gradient">Winter Carnival</span>
@@ -21,7 +20,7 @@ const slides = [
 		buttonLink: "https://obi.life/carnival",
 	},
 	{
-		image: slide1,
+		image: "https://d9lbluszet4xk.cloudfront.net/website/carnival/gallery/obi.webp",
 		title: (
 			<>
 				<span className="block text-gradient">Where Celebrations,</span>
@@ -41,13 +40,7 @@ const slides = [
 const Hero = () => {
 	const [current, setCurrent] = useState(0);
 
-	useEffect(() => {
-		const timer = setInterval(
-			() => setCurrent((prev) => (prev + 1) % slides.length),
-			9000
-		);
-		return () => clearInterval(timer);
-	}, []);
+
 
 	const next = () => setCurrent((prev) => (prev + 1) % slides.length);
 	const prev = () =>
