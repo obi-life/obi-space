@@ -4,31 +4,15 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
-const slides = [
-	{
-		image:
-			"https://d9lbluszet4xk.cloudfront.net/website/carnival/gallery/winter-poster.webp",
+interface Slide {
+	image: string;
+	title: React.ReactNode;
+	subtitle: string;
+	buttonText: string;
+	buttonLink: string;
+}
 
-		// 👇 multiple content blocks ONLY for this slide
-		items: [
-			{
-				title: <span className="block text-gradient">Winter Carnival</span>,
-				subtitle:
-					"Experience games, workshops, food stalls and holiday magic at Obi’s Winter Carnival.",
-				buttonText: "Book Carnival Tickets",
-				buttonLink: "https://obi.life/carnival",
-			},
-			{
-				title: (
-					<span className="block text-gradient">Carol Singing Competition</span>
-				),
-				subtitle: "Where Voices Come Together in Christmas Harmony!",
-				buttonText: "Register Now",
-				buttonLink: "https://obi.life/carnival/carol-competition",
-			},
-		],
-	},
-
+const slides: Slide[] = [
 	{
 		image:
 			"https://d9lbluszet4xk.cloudfront.net/website/carnival/gallery/obi.webp",
@@ -78,73 +62,28 @@ const Hero = () => {
 
 			{/* TEXT CONTENT */}
 			<div className="relative z-10 container mx-auto px-4 text-center">
-				<div className="space-y-12">
-					{/* MULTI ITEM SLIDE */}
-					{slides[current].items ? (
-						slides[current].items.map((item, idx) => (
-							<div key={idx} className="space-y-6">
-								<h1
-									className="
-    font-display
-    text-4xl sm:text-4xl md:text-6xl lg:text-7xl
-    font-bold
-    leading-tight
-    text-white
-    drop-shadow-[0_0_12px_rgba(255,255,255,0.7)]
-  "
-								>
-									{item.title}
-								</h1>
+				<h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.7)]">
+					{slides[current].title}
+				</h1>
 
-								<p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-									{item.subtitle}
-								</p>
+				<p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+					{slides[current].subtitle}
+				</p>
 
-								<div className="flex justify-center">
-									<a
-										href={item.buttonLink}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<Button
-											size="lg"
-											className="gradient-sunset text-primary-foreground hover:scale-105 transition-all duration-300 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] group"
-										>
-											{item.buttonText}
-											<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-										</Button>
-									</a>
-								</div>
-							</div>
-						))
-					) : (
-						/* NORMAL SINGLE ITEM SLIDE */
-						<>
-							<h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-								{slides[current].title}
-							</h1>
-
-							<p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-								{slides[current].subtitle}
-							</p>
-
-							<div className="flex justify-center">
-								<a
-									href={slides[current].buttonLink}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<Button
-										size="lg"
-										className="gradient-sunset text-primary-foreground hover:scale-105 transition-all duration-300 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] group"
-									>
-										{slides[current].buttonText}
-										<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-									</Button>
-								</a>
-							</div>
-						</>
-					)}
+				<div className="flex justify-center">
+					<a
+						href={slides[current].buttonLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Button
+							size="lg"
+							className="gradient-sunset text-primary-foreground hover:scale-105 transition-all duration-300 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] group"
+						>
+							{slides[current].buttonText}
+							<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+						</Button>
+					</a>
 				</div>
 			</div>
 
